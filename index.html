@@ -8,16 +8,17 @@
 <body>
     <header>
         <nav>
+            <img src="./Assets/logo.png">
             <a href="file:///E:/Projects/TicTacToe/index.html">Play</a>
             <a>About us</a>
         </nav>
     </header>
+    <h1>TICTACTOE</h1>
     <main>
-        <h1>TICTACTOE</h1>
         <div id="container">
-        <table border="3">
+        <table onclick="click1()" border="3">
             <tr>
-                <td>X</td>
+                <td >X</td>
                 <td>X</td>
                 <td>X</td>
             </tr>
@@ -35,7 +36,7 @@
             </tr>
         </table>
         <div id="scoreContainer">
-            <h2> Player A turn </h2>
+            <h2 id="playerTurn"> Player A turn </h2>
             <h2> Scores </h2>
             <h2>A :</h2>
             <h2>B :</h2>
@@ -43,6 +44,7 @@
         </div>
     </div>
     </main>
+    <script src="./script.js"></script>
 </body>
-
+s
 </html>
