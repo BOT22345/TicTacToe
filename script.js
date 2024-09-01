@@ -1,4 +1,6 @@
 
+let score_A=document.getElementById("A_score").innerText=0;
+let score_B=document.getElementById("B_score").innerText=0;
 // to change the turn 
 
 function click1(){
@@ -10,4 +12,9 @@ function click1(){
         turn2.innerText="Player A turn";
     }   
 }
+
+
+
+
+
 
