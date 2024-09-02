@@ -1,18 +1,10 @@
 //Variables
 let score_A=document.getElementById("A_score");
 let score_B=document.getElementById("B_score");
-let Turn=true;
+let Cells=document.getElementsByClassName("cell");
+let turn=true;
 
-// to change the turn 
-function click1(){
-    let turn2=document.getElementById("playerTurn");
-    if(turn2.innerText==="Player A :X"){
-        turn2.innerText="Player B :O";
-    }
-    else{
-        turn2.innerText="Player A :X";
-    }   
-}
+
 
 //score Changer for A
 function AScoreAdd(){
@@ -23,9 +15,25 @@ function BScoreAdd(){
     score_B.innerText++; 
 }
 
+//handle clicks on board
+function cellClick(event){
+    let cell=event.target;
+    if(cell.innerText==="_"){
+        if(turn){
+            cell.innerText="X";
+           
+        }else{
+            cell.innerText="O";
+            
+        }
+        turn=!turn;
+    }
+}
+
+
 //reset board function
 function BoardReset(){
-    let Cells=document.getElementsByClassName("cell");
+    Cells=document.getElementsByClassName("cell");
     for(let i=0;i<Cells.length;i++){
         Cells[i].innerText="_"
     }
@@ -33,19 +41,74 @@ function BoardReset(){
 
 //reset Score
 function ScoreReset(){
-    score_A.innerText=" ";
-    score_B.innerText=" ";
+    score_A.innerText="0";
+    score_B.innerText="0";
+}
+
+//result calculate
+function Result(){
+// for X victory
+if(Cells[0].innerText==="X" && Cells[1].innerText==="X" && Cells[2].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[3].innerText==="X" && Cells[4].innerText==="X" && Cells[5].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[6].innerText==="X" && Cells[7].innerText==="X" && Cells[8].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[0].innerText==="X" && Cells[3].innerText==="X" && Cells[6].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[1].innerText==="X" && Cells[4].innerText==="X" && Cells[7].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[2].innerText==="X" && Cells[5].innerText==="X" && Cells[8].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[0].innerText==="X" && Cells[4].innerText==="X" && Cells[8].innerText==="X"){
+    score_A.innerText++;
+}
+if(Cells[2].innerText==="X" && Cells[4].innerText==="X" && Cells[6].innerText==="X"){
+    score_A.innerText++;
+}
+
+// for O victory
+if(Cells[0].innerText==="O" && Cells[1].innerText==="O" && Cells[2].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[3].innerText==="O" && Cells[4].innerText==="O" && Cells[5].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[6].innerText==="O" && Cells[7].innerText==="O" && Cells[8].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[0].innerText==="O" && Cells[3].innerText==="O" && Cells[6].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[1].innerText==="O" && Cells[4].innerText==="O" && Cells[7].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[2].innerText==="O" && Cells[5].innerText==="O" && Cells[8].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[0].innerText==="O" && Cells[4].innerText==="O" && Cells[8].innerText==="O"){
+    score_B.innerText++;
+}
+if(Cells[2].innerText==="O" && Cells[4].innerText==="O" && Cells[6].innerText==="O"){
+    score_B.innerText++;
 }
 
 
 
-// Event listners
-let gameboard=document.getElementById("gameboard");
-gameboard.addEventListener("click",()=>{
-    click1();
-    AScoreAdd();
-    BScoreAdd();
-})
 
+
+}
+
+
+// Event listners
+for(let i=0;i<Cells.length;i++){
+    Cells[i].addEventListener('click',cellClick);
+}
 
 
