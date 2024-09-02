@@ -16,32 +16,33 @@
     <h1>TICTACTOE</h1>
     <main>
         <div id="container">
-        <table onclick="click1()" border="3">
+        <table id="gameboard"  border="3">
             <tr>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
+                <td class="cell" id="cell1">X</td>
+                <td class="cell" id="cell2">X</td>
+                <td class="cell" id="cell3">X</td>
             </tr>
             <tr>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
+                <td class="cell" id="cell4">X</td>
+                <td class="cell" id="cell5">X</td>
+                <td class="cell" id="cell6">X</td>
 
             </tr>
             <tr>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
+                <td class="cell" id="cell7">X</td>
+                <td class="cell" id="cell8">X</td>
+                <td class="cell" id="cell9">X</td>
 
             </tr>
         </table>
         <div id="scoreContainer">
             <h2 id="playerTurn"> Player A turn </h2>
             <h2> Scores </h2>
-            <h2 class="scores">A : <span id="A_score"></span></h2>
+            <h2 class="scores">A : <span id="A_score">0</span></h2>
             
-            <h2 class="scores">B : <span id="B_score"></span></h2>
+            <h2 class="scores">B : <span id="B_score">0</span></h2>
             <h2>Result</h2>
+            <button id="resetButton" onclick="ButtonReset()">Reset</button>
         </div>
     </div>
     </main>
