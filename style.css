@@ -65,3 +65,16 @@ h1{
     justify-content: center;
     align-items: center;
 }
+#buttonContainers{
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+button{
+    height:50px;
+    width:100px;
+    color:aqua;
+    background:black;
+    border-radius:20px;
+    cursor:pointer;
+}

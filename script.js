@@ -2,6 +2,9 @@
 let score_A=document.getElementById("A_score");
 let score_B=document.getElementById("B_score");
 let Cells=document.getElementsByClassName("cell");
+let resetBoard=document.querySelector("#resetBoard");
+let resetScore=document.getElementById("resetScore");
+let result=document.getElementById("result");
 let turn=true;
 
 
@@ -49,68 +52,76 @@ function ScoreReset(){
 
 //result calculate
 function Result(){
+
 // for X victory
-if(Cells[0].innerText==="X" && Cells[1].innerText==="X" && Cells[2].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[3].innerText==="X" && Cells[4].innerText==="X" && Cells[5].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[6].innerText==="X" && Cells[7].innerText==="X" && Cells[8].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[0].innerText==="X" && Cells[3].innerText==="X" && Cells[6].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[1].innerText==="X" && Cells[4].innerText==="X" && Cells[7].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[2].innerText==="X" && Cells[5].innerText==="X" && Cells[8].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[0].innerText==="X" && Cells[4].innerText==="X" && Cells[8].innerText==="X"){
-    score_A.innerText++;
-}
-if(Cells[2].innerText==="X" && Cells[4].innerText==="X" && Cells[6].innerText==="X"){
-    score_A.innerText++;
-}
+    if(Cells[0].innerText==="X" && Cells[1].innerText==="X" && Cells[2].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[3].innerText==="X" && Cells[4].innerText==="X" && Cells[5].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[6].innerText==="X" && Cells[7].innerText==="X" && Cells[8].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[0].innerText==="X" && Cells[3].innerText==="X" && Cells[6].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[1].innerText==="X" && Cells[4].innerText==="X" && Cells[7].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[2].innerText==="X" && Cells[5].innerText==="X" && Cells[8].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[0].innerText==="X" && Cells[4].innerText==="X" && Cells[8].innerText==="X"){
+        score_A.innerText++;
+    }
+    if(Cells[2].innerText==="X" && Cells[4].innerText==="X" && Cells[6].innerText==="X"){
+        score_A.innerText++;
+    }
 
-// for O victory
-if(Cells[0].innerText==="O" && Cells[1].innerText==="O" && Cells[2].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[3].innerText==="O" && Cells[4].innerText==="O" && Cells[5].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[6].innerText==="O" && Cells[7].innerText==="O" && Cells[8].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[0].innerText==="O" && Cells[3].innerText==="O" && Cells[6].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[1].innerText==="O" && Cells[4].innerText==="O" && Cells[7].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[2].innerText==="O" && Cells[5].innerText==="O" && Cells[8].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[0].innerText==="O" && Cells[4].innerText==="O" && Cells[8].innerText==="O"){
-    score_B.innerText++;
-}
-if(Cells[2].innerText==="O" && Cells[4].innerText==="O" && Cells[6].innerText==="O"){
-    score_B.innerText++;
-}
-
-
-
-
+    // for O victory
+    if(Cells[0].innerText==="O" && Cells[1].innerText==="O" && Cells[2].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[3].innerText==="O" && Cells[4].innerText==="O" && Cells[5].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[6].innerText==="O" && Cells[7].innerText==="O" && Cells[8].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[0].innerText==="O" && Cells[3].innerText==="O" && Cells[6].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[1].innerText==="O" && Cells[4].innerText==="O" && Cells[7].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[2].innerText==="O" && Cells[5].innerText==="O" && Cells[8].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[0].innerText==="O" && Cells[4].innerText==="O" && Cells[8].innerText==="O"){
+        score_B.innerText++;
+    }
+    if(Cells[2].innerText==="O" && Cells[4].innerText==="O" && Cells[6].innerText==="O"){
+        score_B.innerText++;
+    }
 
 }
 
 
 // Event listners
+//for handling individual clicks
 for(let i=0;i<Cells.length;i++){
     Cells[i].addEventListener('click',cellClick);
 }
+
+//for game board reset
+resetBoard.addEventListener('click',BoardReset);
+
+//for score reset
+resetScore.addEventListener('click',ScoreReset);
+
+//for result calcualtion 
+result.addEventListener('click',Result);
+
 
 
