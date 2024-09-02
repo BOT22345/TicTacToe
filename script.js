@@ -18,13 +18,15 @@ function BScoreAdd(){
 //handle clicks on board
 function cellClick(event){
     let cell=event.target;
+    let turnDisplay=document.getElementById("playerTurn");
     if(cell.innerText==="_"){
         if(turn){
             cell.innerText="X";
+            turnDisplay.innerText="Player B : O";
            
         }else{
             cell.innerText="O";
-            
+            turnDisplay.innerText="Player A : X";
         }
         turn=!turn;
     }
