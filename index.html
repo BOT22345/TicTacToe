@@ -1,14 +1,15 @@
-<html>
 
+<html>
 <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
         <nav>
-            <img src="./Assets/logo.png">
+            <img src="./Assets/logo.png" alt="Logo">
             <a href="#">Play</a>
             <a href="/aboutUs.html">About us</a>
         </nav>
@@ -16,39 +17,36 @@
     <h1>TICTACTOE</h1>
     <main>
         <div id="container">
-        <table id="gameboard"  border="3">
-            <tr>
-                <td class="cell" id="cell1">_</td>
-                <td class="cell" id="cell2">_</td>
-                <td class="cell" id="cell3">_</td>
-            </tr>
-            <tr>
-                <td class="cell" id="cell4">_</td>
-                <td class="cell" id="cell5">_</td>
-                <td class="cell" id="cell6">_</td>
-
-            </tr>
-            <tr>
-                <td class="cell" id="cell7">_</td>
-                <td class="cell" id="cell8">_</td>
-                <td class="cell" id="cell9">_</td>
-
-            </tr>
-        </table>
-        <div id="scoreContainer">
-            <h2 id="playerTurn">Player A: X</h2>
-            <h2> Scores </h2>
-            <h2 class="scores">A : <span id="A_score">0</span></h2>
-            
-            <h2 class="scores">B : <span id="B_score">0</span></h2>
-            <h2>Result</h2>
-            <div id="buttonContainers">
-                <button id="resetBoard">ResetBoard</button>
-                <button id="resetScore">ResetScore</button>
-                <button id="result" >Result</button>
+            <table id="gameboard" border="3">
+                <tr>
+                    <td class="cell" id="cell1">_</td>
+                    <td class="cell" id="cell2">_</td>
+                    <td class="cell" id="cell3">_</td>
+                </tr>
+                <tr>
+                    <td class="cell" id="cell4">_</td>
+                    <td class="cell" id="cell5">_</td>
+                    <td class="cell" id="cell6">_</td>
+                </tr>
+                <tr>
+                    <td class="cell" id="cell7">_</td>
+                    <td class="cell" id="cell8">_</td>
+                    <td class="cell" id="cell9">_</td>
+                </tr>
+            </table>
+            <div id="scoreContainer">
+                <h2 id="playerTurn">Player A: X</h2>
+                <h2> Scores </h2>
+                <h2 class="scores">A : <span id="A_score">0</span></h2>
+                <h2 class="scores">B : <span id="B_score">0</span></h2>
+                <h2>Result</h2>
+                <div id="buttonContainers">
+                    <button id="resetBoard">ResetBoard</button>
+                    <button id="resetScore">ResetScore</button>
+                    <button id="result">Result</button>
+                </div>
             </div>
         </div>
-    </div>
     </main>
     <script src="./script.js"></script>
 </body>
